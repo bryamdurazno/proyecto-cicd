@@ -2,13 +2,12 @@ name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -30,5 +29,5 @@ jobs:
 
       - name: Revisar código con IA
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python review_ai.py
