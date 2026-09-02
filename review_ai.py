@@ -24,9 +24,32 @@ APPROVED
 Si encuentras un problema que debería impedir el despliegue, responde exactamente:
 REJECTED
 
-Después de la palabra APPROVED o REJECTED explica brevemente el motivo.
+Después de APPROVED o REJECTED explica brevemente el motivo.
 
 Código:
 
 ```python
 {codigo}
+
+"""
+
+response = client.responses.create(
+model="gpt-5-mini",
+input=prompt
+)
+
+resultado = response.output_text.strip()
+
+print("Resultado de la revisión de IA:")
+print(resultado)
+
+if resultado.startswith("REJECTED"):
+print("La IA rechazó el código. Se detiene el pipeline.")
+sys.exit(1)
+
+if resultado.startswith("APPROVED"):
+print("La IA aprobó el código.")
+sys.exit(0)
+
+print("La IA no devolvió una respuesta válida.")
+sys.exit(1)
