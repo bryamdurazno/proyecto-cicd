@@ -1,0 +1,5 @@
+Flask
+#Flask → nos permite crear la aplicación web.
+
+gunicorn
+#Gunicorn → será el servidor que utilizaremos para ejecutarla en Render.
