@@ -44,11 +44,11 @@ print("Resultado de la revisión de IA:")
 print(resultado)
 
 if resultado.startswith("REJECTED"):
-print("La IA rechazó el código. Se detiene el pipeline.")
+    print("La IA rechazó el código. Se detiene el pipeline.")
 sys.exit(1)
 
 if resultado.startswith("APPROVED"):
-print("La IA aprobó el código.")
+    print("La IA aprobó el código.")
 sys.exit(0)
 
 print("La IA no devolvió una respuesta válida.")
