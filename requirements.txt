@@ -3,3 +3,4 @@ Flask
 
 gunicorn
 #Gunicorn → será el servidor que utilizaremos para ejecutarla en Render.
+pytest
